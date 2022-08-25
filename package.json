@@ -1,6 +1,6 @@
 {
   "name": "action-tools",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "tools for dg action",
   "main": "main.js",
   "scripts": {
