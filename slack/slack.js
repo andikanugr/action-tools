@@ -31,4 +31,3 @@ exports.Slack = function(token, secret){
         return result.ts
     }
 }
-
