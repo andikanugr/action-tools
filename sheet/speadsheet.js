@@ -20,7 +20,7 @@ exports.Sheet = function(keys, spreadsheetId){
             });
             return result.data.valueRanges;
         } catch (err) {
-            console.log(err)
+            throw err
         }
     }
 
@@ -73,7 +73,7 @@ exports.Sheet = function(keys, spreadsheetId){
                   }
             })
           } catch (err) {
-            console.error(err);
+            throw err
           }
     }
 
@@ -89,7 +89,7 @@ exports.Sheet = function(keys, spreadsheetId){
                   }
             })
           } catch (err) {
-            console.error(err);
+            throw err
           }
     }
 
@@ -107,7 +107,7 @@ exports.Sheet = function(keys, spreadsheetId){
             // TODO: Change code below to process the `response` object:
             console.log(JSON.stringify(response, null, 2));
           } catch (err) {
-            console.error(err);
+            throw err
           }
     }
 }
