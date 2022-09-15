@@ -32,7 +32,7 @@ exports.Slack = function (token, secret) {
     }
 
     const deployemntTemplate = `Deployment :fire:\n\nService: {service}\nPIC: {pic}\nRFC: {rfc}\nTag: {tag}\nRelease: {release}`
-    this.DGupdateDeploymentThread() = async function (channel, ts, data) {
+    this.DGupdateDeploymentThread = async function (channel, ts, data) {
         const status = data.Status
         const service = data.Service
         const pic = data.PIC
