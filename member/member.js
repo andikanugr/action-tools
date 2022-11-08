@@ -3,6 +3,7 @@ exports.Member=function(accounts){
     this.slackToGithub = {}
     this.githubToJira = {}
     this.jiraToSlack = {}
+    this.emailToSlack = {}
     this.CAB = []
     this.PO = []
 
@@ -12,6 +13,7 @@ exports.Member=function(accounts){
         this.githubToSlack[account[0]] = account[1]
         this.slackToGithub[account[1]] = account[0]
         this.jiraToSlack[account[2]] = account[1]
+        this.emailToSlack[account[2]] = account[4]
         
         switch(account[3]){
             case "CAB":
@@ -37,6 +39,10 @@ exports.Member=function(accounts){
 
     this.getSlackFromJira = function(j) {
         return this.jiraToSlack[j]
+    }
+
+    this.getSlackFromEmail = function(e) {
+        return this.emailToSlack[e]
     }
 
     this.getCAB = function(){

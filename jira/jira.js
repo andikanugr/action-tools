@@ -18,6 +18,21 @@ exports.Jira = function (token, user, host) {
         return null
     }
 
+    this.getComments = async function (issue) {
+        const url = `${host}/rest/api/2/issue/${issue}/comment?orderBy=-created&maxResults=5`
+        let response = await fetch(url, {
+            headers: {
+                'Authorization': 'Basic ' + jiraAuth,
+                'Content-Type': 'application/json'
+            }
+        });
+        if (response.ok) {
+            const json = await response.json();
+            return json.fields
+        }
+        return null
+    }
+
     this.createTask = async function (data, linked) {
         const issueUrl = `${host}/rest/api/3/issue`
         const payload = {
