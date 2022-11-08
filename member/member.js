@@ -13,7 +13,7 @@ exports.Member=function(accounts){
         this.githubToSlack[account[0]] = account[1]
         this.slackToGithub[account[1]] = account[0]
         this.jiraToSlack[account[2]] = account[1]
-        this.emailToSlack[account[2]] = account[4]
+        this.emailToSlack[account[4]] = account[1]
         
         switch(account[3]){
             case "CAB":
