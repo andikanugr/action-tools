@@ -28,7 +28,7 @@ exports.Jira = function (token, user, host) {
         });
         if (response.ok) {
             const json = await response.json();
-            return json.fields
+            return json.comments
         }
         return null
     }
